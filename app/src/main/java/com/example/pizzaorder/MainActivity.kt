@@ -3,9 +3,12 @@ package com.example.pizzaorder
 import android.os.BaseBundle
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.pizzaorder.adapters.MainViewPagerAdapter
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : BasicActivity() {
+
+    lateinit var mvpa : MainViewPagerAdapter
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -21,8 +24,11 @@ class MainActivity : BasicActivity() {
 
 //        뷰페이저 작업
 
+        mvpa =MainViewPagerAdapter(supportFragmentManager)
+        mainViewPager.adapter =mvpa
+
 //        탭레이아웃 작업
-//        mainTabLayout.setupWithViewPager()
+        mainTabLayout.setupWithViewPager(mainViewPager)
     }
 
   
