@@ -5,7 +5,9 @@ import androidx.appcompat.app.AppCompatActivity
 //추상 클래스 abstract
 abstract class BasicActivity :AppCompatActivity() {
 
-//    디스를 미리 받아두기
+    abstract val permissionlistener: PermissionListener?
+
+    //    디스를 미리 받아두기
      val mContext =this
 
 
